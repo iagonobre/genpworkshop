@@ -195,6 +195,13 @@ export default createGlobalStyle`
     }
   }
 
+  @media (max-width: 443px) {
+    #email{
+      width: 240px;
+      font-size: 15px;
+    }
+  }
+
   @media (max-width: 383px) {
     #email{
       width: 230px;
