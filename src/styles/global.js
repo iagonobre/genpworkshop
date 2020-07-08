@@ -201,7 +201,7 @@ export default createGlobalStyle`
       font-size: 14px;
     }
     #svgsubmit{
-      left: 4px;
+      left: 3px;
     }
   }
 
