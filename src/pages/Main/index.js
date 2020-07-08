@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { Page, Container, A, Slogan, Paragrafo, Butao, Header, SubmitButton, Text } from './styles'
 import logo from '../../assets/logo.svg';
-import { MdEmail, MdSchool } from 'react-icons/md';
-import { AiOutlinePaperClip } from 'react-icons/ai';
+import fundacao from '../../assets/fundacao.png';
+import { FcInspection, FcIdea } from 'react-icons/fc';
+import { MdEmail } from 'react-icons/md'
 import { BsArrowBarRight } from 'react-icons/bs';
 import { toast } from 'react-toastify';
 import { api } from '../../services/api';
-import axios from 'axios';
+import history from '../../services/history';
 import * as Yup from 'yup';
 
 const schema = Yup.object().shape({
@@ -19,6 +20,14 @@ export default class Main extends Component {
     loading: false,
     place: 'Digite o seu melhor e-mail'
   };
+
+  componentDidMount() {
+    const inscrito = localStorage.getItem('inscrito');
+
+    if (inscrito) {
+      history.push('/inscricao')
+    }
+  }
 
   handleInputChange = e => {
     this.setState({ newEmail: e.target.value })
@@ -50,7 +59,9 @@ export default class Main extends Component {
       loading: false,
     })
 
-    toast.success('E-mail enviado com sucesso')
+    history.push('/inscricao')
+    const inscrito = true
+    localStorage.setItem('inscrito', JSON.stringify(inscrito));
   }
 
   render() {
@@ -62,25 +73,25 @@ export default class Main extends Component {
           <div>
             <Header>
               <header>
-                <img src={logo} alt="logomarca"></img>
+                <img src={logo} width={70} alt="logomarca"></img>
                 <A id="a">
-                  <span id="embreve" />
-                  <a href="/">Em Breve</a>
+                  <a href="https://www.estudar.org.br/"><img src={fundacao} width={100} alt="fundacao" ></img></a>
                 </A>
               </header>
             </Header>
 
             <Container id="content">
               <main>
-                <Slogan>O Assistente Virtual que decola seus estudos!</Slogan>
+                <Slogan>Aprenda a executar seus sonhos! PARTICIPE!</Slogan>
                 <Paragrafo id="par">
-                  O SAVE é um universo de funcionalidades, feito exclusivamente para salvar você, estudante do IFRN.
+                  O <strong>GENP</strong> em parceira com a fundação estudar oferece um WorkShop <strong>GRATUITO</strong>, <strong>VAGAS LIMITADAS.</strong>
                 </Paragrafo>
                 <Text id="txt">
-                  <MdSchool />  Vinculado ao SUAP. <br />
-                  <AiOutlinePaperClip /> Acesse materiais, crie notificações e muito mais.
+                  Temas abordados: <br />
+                  <FcIdea /> Sonho Grande <br />
+                  <FcInspection /> Execução
                 </Text>
-                <Text id="txt2">Cadastre-se abaixo, e receba um e-mail durante o lançamento.</Text>
+                <Text id="txt2">Cadastre-se abaixo, Vagas Limitadas.</Text>
                 <form schema={schema} autocomplete="off" onSubmit={this.handleSubmit}>
                   <Butao id="butao">
                     <input

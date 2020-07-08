@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import imageBackground from '../../assets/home-background.svg';
-import logIn from '../../assets/log-in.svg';
 // Title = h3
 // Slogan = h1
 // Paragrafo = p
@@ -11,7 +10,6 @@ export const Page = styled.div`
   height: 100vh;
   background: url(${imageBackground}) no-repeat;
   background-position: 50vw bottom;
-  background-attachment: fixed;
 `
 
 export const Container = styled.main`
@@ -27,13 +25,13 @@ export const Container = styled.main`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color: #231440;
+    color: #333;
   }
 `
 
 export const Slogan = styled.h1`
   font-size: 45px;
-  color: #AF01AD;
+  color: #46C7F0;
   font-family: 'Ubuntu', sans-serif;
   line-height: 45px;
 `
@@ -42,7 +40,7 @@ export const Paragrafo = styled.p`
   margin-top: 24px;
   font-size: 21px;
   line-height: 28px;
-  color: #231440;
+  color: #333;
 `
 
 export const Text = styled.p`
@@ -55,24 +53,13 @@ export const Text = styled.p`
 `
 
 export const Header = styled.div`   
-  background: linear-gradient(90deg, #AF01AD, #492885, #231440);
+  background: #FECA52;
 `
 
 export const A = styled.div`
   display: flex;
   a{
     display: flex;
-    color: white;
-    font-weight: 700;
-  }
-  span {
-    margin-right: 16px;
-    display: flex;
-
-    background-image: url(${logIn});
-
-    width: 20px;
-    height: 20px;
   }
 `
 
@@ -80,7 +67,7 @@ export const SubmitButton = styled.button.attrs(props => ({
   disabled: props.loading,
 }))`
   position: relative;
-  background-color: #8B01A1;
+  background-color: #13B0E5;
   width: 100%;
   max-width: 55px; 
   height: 63px;
@@ -129,14 +116,14 @@ export const Butao = styled.div`
     font-size: 18px;
     color: white;
     font-family: 'Roboto', sans-serif;
-    background-color: #AF01AD;
+    background-color: #46C7F0;
     display: flex;
     align-items: center;
     justify-content: center;
 
     border-width: 4px;
     border-style: solid;
-    border-color: #AF01AD;
+    border-color: #46C7F0;
     border-image: initial;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
@@ -144,7 +131,7 @@ export const Butao = styled.div`
   }
   input:focus {
     border-style: solid;
-    border-color: #8B01A1;
+    border-color: #13B0E5;
     border-image: initial;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
@@ -155,4 +142,5 @@ export const Butao = styled.div`
     display: flex;
     flex-direction: column;
   }
+  
 `
