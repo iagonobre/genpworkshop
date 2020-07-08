@@ -197,8 +197,11 @@ export default createGlobalStyle`
 
   @media (max-width: 443px) {
     #email{
-      width: 240px;
-      font-size: 15px;
+      width: 235px;
+      font-size: 14px;
+    }
+    #svgsubmit{
+      left: 4px;
     }
   }
 
