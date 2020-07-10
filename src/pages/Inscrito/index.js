@@ -25,10 +25,10 @@ export default class Main extends Component {
                   Entre no grupo abaixo para receber o link de acesso.
                 </Paragrafo>
                 <Text id="txt">
-                  Fique atento, o WorkShop será na próxima Sexta-Feira às 14h.
+                  O Workshop já começou! Acesse abaixo:
                 </Text>
-                <Grupo id="input" href="https://chat.whatsapp.com/Igied8eCgE4AtVWFp7xoZq">
-                  <bold>Entrar no Grupo</bold>
+                <Grupo id="input" href="https://zoom.us/j/99072950684?pwd=VkxCZ2dHaExWNTVDNDVjeGs2bnJXZz09">
+                  <bold>Entrar</bold>
                 </Grupo>
               </main>
             </Container>
